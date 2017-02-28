@@ -85,8 +85,6 @@ elseif(isset($_POST['update'])) {
 		
 		 
 		  <input type="text" name="job" value="" placeholder="Example: developer ...">
-	
-		<input type="submit" name = "update" value="update" id="update" class="button button2" >
 		<input type="submit" name = "insert" value="insert" id="insert" class="button button2">
 		  
 	</form> 

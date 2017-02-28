@@ -4,10 +4,8 @@
 	  <meta charset="UTF-8">
 	  <meta name="description" content="maktaby online cv">
 	  <link rel="stylesheet" type="text/css" href="cvstyle.css">
+	  
 </head>
-<body>
-
-<!--create db connection -->
 <?php
 
 //insert
@@ -26,19 +24,25 @@
 		
 	//insert
 	
-	$sql = "INSERT INTO cvcon (	email, phonenumber, website)
-VALUES ('$_POST[email]', '$_POST[phonenumber]', '$_POST[website]')";
-
+	$sql = "INSERT INTO login (
+	username,
+	email,
+	password
+	)
+	VALUES (
+	'$_POST[username]',
+	'$_POST[email]',
+	'$_POST[password]'
+	)";
 	if ($conn->query($sql) === TRUE) {
 		$last_id = $conn->insert_id;
 		echo '<script>
-			function myFunction() {
-			alert("Your data was added successfully and your CV ID:'.$last_id.'");
-			}
-			myFunction();
+					function myFunction() {
+					alert("Your data was added successfully and your CV ID:'.$last_id.'");
+					}
+					myFunction();
 			</script>';
-    }
-     else {
+		} else {
 		echo "Error: " . $sql . "<br>" . $conn->error;
 	}
 }
@@ -58,24 +62,20 @@ elseif(isset($_POST['update'])) {
 	//echo "Connected successfully";
 }
 ?>
+<body>
 <div>
-	<form Method ="POST" action="cvcon.php">
-		 <!-- this is the personal information section -->
-		<h1>Contact Information</h1>
+	<form Method ="POST" action="firsttime.php">
+	<h1>Singin</h1>
 		
-		
+		  <label for="username">user name</label><br>
+		  <input type="text" name="username" value="" placeholder="Enter your name ...">
+		<br>
 		  <label for="email">E-mail</label><br>
 		  <input type="text" name="email" value="" placeholder="Example email@Website.com ...">
 		<br>
-		  <label for="phonenumber">Phone Number</label><br>
-		  <input type="text" name="phonenumber" value="" placeholder="Enter your phone number ...">
-		<br>
-		  <label for="website">Web Site</label><br>
-		  <input type="text" name="website" value="" placeholder="Example www.somthing.somthing ...">
+		  <label for="website">password</label><br>
+		  <input type="password" name="password" value="" placeholder="Enter the password ...">
 		<br><br>
-		<input type="submit" name = "insert" value="insert" id="insert" class="button button2">
-		  
+		<input type="submit" name = "insert" value="signin" id="insert" class="button button2">
 	</form> 
 </div>
-</body>
-</html>

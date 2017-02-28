@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 26, 2017 at 03:12 PM
+-- Generation Time: Feb 28, 2017 at 02:50 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -38,7 +38,7 @@ CREATE TABLE `cvcon` (
 --
 
 INSERT INTO `cvcon` (`id`, `email`, `phonenumber`, `website`) VALUES
-(0, '', 0, '');
+(1, 'alaa', 0, '');
 
 -- --------------------------------------------------------
 
@@ -86,7 +86,37 @@ CREATE TABLE `languages` (
 --
 
 INSERT INTO `languages` (`id`, `lang1`, `rate1`, `lang2`, `rate2`, `lang3`, `rate3`) VALUES
-(1, 'AF', 'accepted', 'AF', 'accepted', 'AF', 'accepted');
+(1, 'AF', 'accepted', 'AF', 'accepted', 'AF', 'accepted'),
+(2, 'Afrikanns', 'accepted', 'Afrikanns', 'accepted', 'Afrikanns', 'accepted'),
+(3, 'Afrikanns', 'accepted', 'Afrikanns', 'accepted', 'Afrikanns', 'accepted'),
+(4, 'Afrikanns', 'accepted', 'Afrikanns', 'accepted', 'Afrikanns', 'accepted'),
+(5, 'Afrikanns', 'accepted', 'Afrikanns', 'accepted', 'Afrikanns', 'accepted');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login`
+--
+
+CREATE TABLE `login` (
+  `id` int(11) NOT NULL,
+  `username` varchar(32) NOT NULL,
+  `email` varchar(32) NOT NULL,
+  `password` varchar(1024) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`id`, `username`, `email`, `password`) VALUES
+(1, 'alaa', 'lolo_alaa2250@yahoo.com', '5f4dcc3b5aa765d61d8327deb882cf99'),
+(2, 'alaa', 'loloalaa2250@yahoo.com', '1234567890'),
+(3, 'alaa1', 'loloalaa225@yahoo.com', '1234567890'),
+(4, 'alaaaaaa', 'aaaaaaaaa@yahoo.com', '1234567890'),
+(5, 'ali', 'ali@yahoo.com', 'alo'),
+(6, 'alaa', 'alaa', 'alaa'),
+(7, '', 'email1', 'password1');
 
 -- --------------------------------------------------------
 
@@ -118,7 +148,12 @@ INSERT INTO `personal` (`id`, `firstname`, `lastname`, `dateofbirth`, `gender`, 
 (2, 'alaa', '', '0000-00-00', '', '', '', '', '', '', 0, ''),
 (3, 'alaa', 'radwan', '2017-01-31', 'fhfg', 'egyptian', 'dont have', 'None', 'Egypt', 'rter', 0, 'Yes'),
 (4, '', '', '0000-00-00', '', '', '', '', '', '', 0, ''),
-(5, '', '', '0000-00-00', '', '', '', '', '', '', 0, '');
+(5, '', '', '0000-00-00', '', '', '', '', '', '', 0, ''),
+(6, 'alaa', 'radwan', '2010-01-31', 'male', 'egyptian', '', '', '', '', 0, ''),
+(7, '', '', '0000-00-00', '', '', '', '', '', '', 0, ''),
+(8, '', '', '0000-00-00', '', '', '', '', '', '', 0, ''),
+(9, '', '', '0000-00-00', '', '', '', '', '', '', 0, ''),
+(10, '', '', '0000-00-00', '', '', '', '', '', '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -188,6 +223,12 @@ ALTER TABLE `languages`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `personal`
 --
 ALTER TABLE `personal`
@@ -218,12 +259,17 @@ ALTER TABLE `education`
 -- AUTO_INCREMENT for table `languages`
 --
 ALTER TABLE `languages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `personal`
 --
 ALTER TABLE `personal`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `specialties`
 --
