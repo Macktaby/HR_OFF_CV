@@ -45,13 +45,13 @@ VALUES (
 	)";
 	if ($conn->query($sql) === TRUE) {
 		$last_id = $conn->insert_id;
-		echo '<script>
+	/*	echo '<script>
 function myFunction() {
     alert("Your data was added successfully and your CV ID:'.$last_id.'");
 }
 myFunction();
-</script>
-';
+</script> 
+';*/
 	} else {
 		echo "Error: " . $sql . "<br>" . $conn->error;
 	}
@@ -77,7 +77,9 @@ elseif(isset($_POST['update'])) {
 		 <!-- this is the personal information section -->
 		<h1>Specialties</h1>
 		<h2>Choose the most three languages you have</h2>
-        <select data-placeholder="Choose a Language..." class="chzn-select" tabindex="4" name="lang1">
+		<span style="color:red">*</span><label for="firstlang">First Language</label>
+        <select data-placeholder="Choose a Language..." class="chzn-select" tabindex="4" name="lang1" required>
+			<option value=""></option>
 			<option value="Afrikanns">Afrikanns</option>
 			<option value="Albanian">Albanian</option>
 			<option value="Arabic">Arabic</option>
@@ -151,15 +153,18 @@ elseif(isset($_POST['update'])) {
 			<option value="Welsh">Welsh</option>
 			<option value="Xhosa">Xhosa</option>
 		</select>
-		<br><label for="rate">Rate</label><br>
-		<select name="rate1" >
+		<br><span style="color:red">*</span><label for="rate">Rate</label><br>
+		<select name="rate1" required>
+			<option value=""></option>
 			<option value="accepted">accepted</option>
 			<option value="good">good</option>
 			<option value="verygood">very good</option>
 			<option value="excellent">excellent</option>
 		</select>
 		<br>
+		<label for="secondlang">Second Language</label>
 		<select data-placeholder="Choose a Language..." class="chzn-select"  tabindex="4" name="lang2">
+			<option value=""></option>
 			<option value="Afrikanns">Afrikanns</option>
 			<option value="Albanian">Albanian</option>
 			<option value="Arabic">Arabic</option>
@@ -235,13 +240,16 @@ elseif(isset($_POST['update'])) {
          </select>
 		 <br><label for="rate">Rate</label><br>
 	     <select name="rate2">
+		     <option value=""></option>
 			<option value="accepted">accepted</option>
 			<option value="good">good</option>
 			<option value="verygood">very good</option>
 			<option value="excellent">excellent</option>
 	     </select>
 		<br>
+		<label for="thirdlang">third Language</label>
 		<select data-placeholder="Choose a Language..." class="chzn-select"  tabindex="4" name="lang3">
+		    <option value=""></option>
 			<option value="Afrikanns">Afrikanns</option>
 			<option value="Albanian">Albanian</option>
 			<option value="Arabic">Arabic</option>
@@ -317,6 +325,7 @@ elseif(isset($_POST['update'])) {
          </select>
 		 <br><label for="rate">Rate</label><br>
 		 <select name="rate3">
+		    <option value=""></option>
 			<option value="accepted">accepted</option>
 			<option value="good">good</option>
 			<option value="verygood">very good</option>

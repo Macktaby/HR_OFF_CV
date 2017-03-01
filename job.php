@@ -56,7 +56,7 @@
 	)";
 	if ($conn->query($sql) === TRUE) {
 		$last_id = $conn->insert_id;
-		echo "Your data was added successfully and your CV ID:$last_id";
+		//echo "Your data was added successfully and your CV ID:$last_id";
 	} else {
 		echo "Error: " . $sql . "<br>" . $conn->error;
 	}
@@ -78,10 +78,16 @@ elseif(isset($_POST['update'])) {
 }
 ?>
 <div>
-	<form Method ="POST" action="cv.php">
+	<form Method ="POST" action="job.php">
 		 <!-- this is the personal information section -->
 		<h1>The Required Job </h1>
-		
+
+  <input type="radio" name="gender" value="Chemist"> Chemist<br>
+  <input type="radio" name="gender" value="Designer"> Designer<br>
+  <input type="radio" name="gender" value="other"> Other<br>
+  <input type="radio" name="gender" value="male"> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other<br>
 		
 		 
 		  <input type="text" name="job" value="" placeholder="Example: developer ...">

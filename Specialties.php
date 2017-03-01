@@ -42,12 +42,12 @@ VALUES (
 	if ($conn->query($sql) === TRUE) {
 		$last_id = $conn->insert_id;
 		$last_id = $conn->insert_id;
-		echo '<script>
+		/*echo '<script>
 				function myFunction() {
 				alert("Your data was added successfully and your CV ID:'.$last_id.'");
 				}
 				myFunction();
-			 </script>';
+			 </script>';*/
     } else {
 		echo "Error: " . $sql . "<br>" . $conn->error;
 	}
@@ -73,15 +73,15 @@ elseif(isset($_POST['update'])) {
 		 <!-- this is the personal information section -->
 		<h1>Specialties</h1>
 		<h2>Insert the most five Specialties you have</h2>
-		  <input type="text" name="one" value="" placeholder="Example: c# developer ...">
+		  <span style="color:red">*</span>1:<input type="text" name="one" value="" placeholder="Example: c# developer ..." required>
 		<br>
-		  <input type="text" name="two" value="" placeholder="Example: c# developer ...">
+		  <span style="color:red">*</span>2:<input type="text" name="two" value="" placeholder="Example: c# developer ..." required>
 		<br>
-		  <input type="text" name="three" value="" placeholder="Example: c# developer ...">
+		  <span style="color:red">*</span>3:<input type="text" name="three" value="" placeholder="Example: c# developer ...">
 		<br>
-		  <input type="text" name="four" value="" placeholder="Example: c# developer ...">
+		  4:<input type="text" name="four" value="" placeholder="Example: c# developer ...">
 		<br>
-		  <input type="text" name="five" value=""placeholder="Example: c# developer ...">
+		  5:<input type="text" name="five" value=""placeholder="Example: c# developer ...">
 		<br><br>
 		<input type="submit" name = "insert" value="insert" id="insert" class="button button2">
 		  

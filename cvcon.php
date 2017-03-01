@@ -31,12 +31,12 @@ VALUES ('$_POST[email]', '$_POST[phonenumber]', '$_POST[website]')";
 
 	if ($conn->query($sql) === TRUE) {
 		$last_id = $conn->insert_id;
-		echo '<script>
-			function myFunction() {
-			alert("Your data was added successfully and your CV ID:'.$last_id.'");
-			}
-			myFunction();
-			</script>';
+		 //echo '<script>
+		//	function myFunction() {
+		//	alert("Your data was added successfully and your CV ID:'.$last_id.'");
+		///	}
+		//	myFunction();
+		//	</script>';
     }
      else {
 		echo "Error: " . $sql . "<br>" . $conn->error;
@@ -64,11 +64,11 @@ elseif(isset($_POST['update'])) {
 		<h1>Contact Information</h1>
 		
 		
-		  <label for="email">E-mail</label><br>
-		  <input type="text" name="email" value="" placeholder="Example email@Website.com ...">
+		  <span style="color:red">*</span><label for="email">E-mail</label><br>
+		  <input type="text" name="email" value="" placeholder="Example email@Website.com ..." required>
 		<br>
-		  <label for="phonenumber">Phone Number</label><br>
-		  <input type="text" name="phonenumber" value="" placeholder="Enter your phone number ...">
+		  <span style="color:red">*</span><label for="phonenumber">Phone Number</label><br>
+		  <input type="text" name="phonenumber" value="" placeholder="Enter your phone number ..." required>
 		<br>
 		  <label for="website">Web Site</label><br>
 		  <input type="text" name="website" value="" placeholder="Example www.somthing.somthing ...">

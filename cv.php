@@ -67,31 +67,31 @@ header("Location: user.php");
 		<h1><center>Enter CV Contents </center></h1>
 			  <center><input type="button" name = "personal" value="personal information" id="go1" class="go go2" style="width:50%"></center><br>
 			  <div class="div1">
-			  <iframe src="personal.php" style="border:none; width:100%; height:1050px;"></iframe>
+			  <center><iframe src="personal.php" style="border:none; width:50%; height:1050px;"></center></iframe>
 			  </div>
 			<br>
 			  <center><input type="button" name = "cvcon" value="contact information" id="go2" class="go go2" style="width:50%"></center><br>
-			  <div class="div2"><iframe src="cvcon.php" style="border:none; width:100%; height:500px;"></iframe>
+			  <div class="div2"><center><iframe src="cvcon.php" style="border:none; width:50%; height:500px;"></center></iframe>
 			  </div>
 			<br>
 			  <center><input type="button" name = "specialties" value="specialties" id="go3" class="go go2" style="width:50%"></center><br>
-			  <div class="div3"><iframe src="specialties.php" style="border:none; width:100%; height:600px;"></iframe>
+			  <div class="div3"><center><iframe src="specialties.php" style="border:none; width:50%; height:700px;"></center></iframe>
 			  </div>
 			<br>
 			  <center><input type="button" name = "languages" value="languages" id="go4" class="go go2" style="width:50%"></center><br>
-			  <div class="div4"><iframe src="languages.php" style="border:none; width:100%; height:700px;"></iframe>
+			  <div class="div4"><center><iframe src="languages.php" style="border:none; width:50%; height:800px;"></center></iframe>
 			  </div>
 			<br>
 			  <center><input type="button" name = "education" value="education" id="go5" class="go go2" style="width:50%"></center><br>
-			  <div class="div5"><iframe src="education.php" style="border:none; width:100%; height:1050px;"></iframe>
+			  <div class="div5"><center><iframe src="education.php" style="border:none; width:50%; height:800px;"></center></iframe>
 			  </div>
 			<br>
 			  <center><input type="button" name = "job" value="required job" id="go6" class="go go2" style="width:50%"></center><br>
-			  <div class="div6"><iframe src="job.php" style="border:none; width:100%; height:300px;"></iframe>
+			  <div class="div6"><center><iframe src="job.php" style="border:none; width:50%; height:1000px;"></center></iframe>
 			  </div>
 			<br>
 			  <center><input type="button" name = "workexp" value="work experince" id="go7" class="go go2" style="width:50%"></center><br>
-			  <div class="div7"><iframe src="workexp.php" style="border:none; width:100%; height:700px;"></iframe>
+			  <div class="div7"><center><iframe src="workexp.php" style="border:none; width:50%; height:700px;"></center></iframe>
 			  </div>
 			<br><br>
 			<center><input type="submit" name = "makecv" value="make CV" id="makecv" class="button button2" onclick="submitForm('cvreporttemplate/orbit-v1.0/Logout.php')" ></center> 

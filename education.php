@@ -4,6 +4,7 @@
 	  <meta charset="UTF-8">
 	  <meta name="description" content="maktaby online cv">
 	  <link rel="stylesheet" type="text/css" href="cvstyle.css">
+	  <script src="javascript.js"></script>
 </head>
 <body>
 
@@ -46,12 +47,12 @@ VALUES (
  )";
 	if ($conn->query($sql) === TRUE) {
 		$last_id = $conn->insert_id;
-		echo '<script>
-				function myFunction() {
-				alert("Your data was added successfully and your CV ID:'.$last_id.'");
-				}
-				myFunction();
-				</script>';
+		//echo '<script>
+		//		function myFunction() {
+		//		alert("Your data was added successfully and your CV ID:'.$last_id.'");
+		//		}
+		//		myFunction();
+		//		</script>';
 	} else {
 		echo "Error: " . $sql . "<br>" . $conn->error;
 	}
@@ -78,30 +79,34 @@ elseif(isset($_POST['update'])) {
 		<h1>Education</h1>
 		
 		
-		  <label for="educationalinstitution">Educational institution</label><br>
-		  <input type="text" name="educationalinstitution" value="" placeholder="Enter your educational institution ...">
+		  <span style="color:red">*</span><label for="educationalinstitution">Educational institution</label><br>
+		  <input type="text" name="educationalinstitution" value="" placeholder="Enter your educational institution ..." required>
 		<br>
-		  <label for="certificate">Certificate</label><br>
-		  <input type="text" name="certificate" value="" placeholder="Enter your certificate ...">
+		  <span style="color:red">*</span><label for="certificate">Certificate</label><br>
+		  <input type="text" name="certificate" value="" placeholder="Enter your certificate ..." required>
 		<br>
-		  <label for="specialization">Specialization</label><br>
-		  <input type="text" name="specialization" value="" placeholder="Enter your specialization ...">
+		  <span style="color:red">*</span><label for="specialization">Specialization</label><br>
+		  <input type="text" name="specialization" value="" placeholder="Enter your specialization ..." required>
 		<br>
 		  <label for="certificatedate">Certificate date</label><br>
 		  <input type="date" name="certificatedate" value="" >
 		<br>
 		  <label for="country">Country</label><br>
-		  <input type="text" name="country" value="" placeholder="Enter the country where you graduated ...">
+		  <select id="country" name="country"></select>
 		<br>
 		  <label for="city">City</label><br>
-		  <input type="text" name="city" value="" placeholder="Enter your city ...">
+		  <select name="city" id="state"></select>
 		<br>
-		<label for="grade">Grade</label><br>
-		  <input type="text" name="grade" value="" placeholder="Example : number from 1 to 100 followed by % ...">
+		<span style="color:red">*</span><label for="grade">Grade</label><br>
+		  <input type="text" name="grade" value="" placeholder="Example : number from 1 to 100 followed by % ..." required>
 		<br><br>
 		<input type="submit" name = "insert" value="insert" id="insert" class="button button2">
 		  
 	</form> 
 </div>
+<script language="javascript">
+            populateCountries("country", "state");
+            populateCountries("country2");
+        </script>
 </body>
 </html>

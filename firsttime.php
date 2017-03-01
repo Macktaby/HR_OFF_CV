@@ -36,12 +36,12 @@
 	)";
 	if ($conn->query($sql) === TRUE) {
 		$last_id = $conn->insert_id;
-		echo '<script>
+		/*echo '<script>
 					function myFunction() {
 					alert("Your data was added successfully and your CV ID:'.$last_id.'");
 					}
 					myFunction();
-			</script>';
+			</script>';*/
 		} else {
 		echo "Error: " . $sql . "<br>" . $conn->error;
 	}
